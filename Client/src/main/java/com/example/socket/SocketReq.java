@@ -10,7 +10,7 @@ public class SocketReq {
          writer.flush();
     }
 
-    static public void sendSingInRequest (String modalType, String login, String pass) {
+    static public String sendSingInRequest (String modalType, String login, String pass) {
         try (
                 Socket socket = new Socket("127.0.0.1", 8000);
                 BufferedWriter writer = new BufferedWriter( new OutputStreamWriter( socket.getOutputStream() ) );
@@ -21,8 +21,13 @@ public class SocketReq {
             send(writer, login);
             send(writer, pass);
 
+            String res = reader.readLine();
+
+            return res;
+
         } catch ( IOException e ) {
             e.printStackTrace();
+            return e.getLocalizedMessage();
         }
     }
 }

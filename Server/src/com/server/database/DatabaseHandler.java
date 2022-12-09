@@ -18,15 +18,17 @@ public class DatabaseHandler extends Config{
         return dbConnection;
     }
 
-    public ResultSet getAllUsers() {
+    public ResultSet singIn(String login, String pass) {
         ResultSet resultSet = null;
 
-        String select = "SELECT * FROM " + Const.USERS_TABLE;
+        String select = "SELECT * FROM " + Const.USERS_TABLE + " WHERE " + Const.USERS_LOGIN + " =? AND " + Const.USERS_PASSWORD + " =?";
 
         try {
-            PreparedStatement prStat = getDbConnection().prepareStatement(select);
+            PreparedStatement prSt = getDbConnection().prepareStatement(select);
+            prSt.setString(1, login);
+            prSt.setString(2, pass);
 
-            resultSet = prStat.executeQuery();
+            resultSet = prSt.executeQuery();
         } catch (SQLException e) {
             e.printStackTrace();
         } catch (ClassNotFoundException e) {

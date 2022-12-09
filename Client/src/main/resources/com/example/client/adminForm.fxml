@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="198.0" prefWidth="301.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.client.AdminFormController">
+   <children>
+      <Text layoutX="-65.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Меню администратора:" textAlignment="CENTER" wrappingWidth="431.7367305755615" />
+      <Button fx:id="userControlMenu" layoutX="57.0" layoutY="58.0" mnemonicParsing="false" onAction="#userControlMenuAction" prefHeight="26.0" prefWidth="187.0" text="Управление пользователями" />
+      <Button fx:id="companyMenu" layoutX="57.0" layoutY="93.0" mnemonicParsing="false" onAction="#companyMenuAction" prefHeight="26.0" prefWidth="187.0" text="Меню компании" />
+      <Button fx:id="toLogin" layoutX="57.0" layoutY="131.0" mnemonicParsing="false" onAction="#toLoginAction" prefHeight="26.0" prefWidth="187.0" text="Выход" />
+   </children>
+</AnchorPane>

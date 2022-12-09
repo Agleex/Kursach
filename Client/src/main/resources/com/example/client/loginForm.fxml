@@ -49,7 +49,7 @@
       </GridPane>
       <FlowPane alignment="BOTTOM_CENTER" orientation="VERTICAL" prefHeight="127.0" prefWidth="366.0">
          <children>
-            <Button id="singInBtn" mnemonicParsing="false" onAction="#onSingInBtnClick" prefHeight="26.0" prefWidth="116.0" text="Войти">
+            <Button id="singInBtn" fx:id="SingInBtn" mnemonicParsing="false" onAction="#singInAction" prefHeight="26.0" prefWidth="116.0" text="Войти">
                <font>
                   <Font size="14.0" />
                </font>
