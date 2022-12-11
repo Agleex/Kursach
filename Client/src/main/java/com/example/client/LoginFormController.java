@@ -37,10 +37,20 @@ public class LoginFormController {
         dialog.setScene(dialogScene);
         dialog.show();
     }
+    @FXML
+    void toRegistrate() throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("RegistrateForm.fxml"));
+        Parent root1 = (Parent) fxmlLoader.load();
+        Stage stage = new Stage();
+        stage.setScene(new Scene(root1));
+        stage.show();
+        Stage stageRoot = (Stage) SingInBtn.getScene().getWindow();
+        stageRoot.close();
+    }
 
     @FXML
     void singInAction(ActionEvent event) throws IOException {
-        String login = loginField.getText();
+            String login = loginField.getText();
             String pass = passwordField.getText();
 
 

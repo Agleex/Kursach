@@ -1,15 +1,17 @@
 import com.server.database.Const;
 import com.server.database.DatabaseHandler;
+import com.server.users.User;
 
 import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.sql.*;
+import java.util.ArrayList;
 //import java.sql.Connection;
 //import java.sql.DriverManager;
 
 public class Main {
-    private static final String SING_IN = "SING_IN";
+    private static final String SING_IN = "SING_IN", REGISTRATE = "REGISTRATE", USER_CONTROL = "USER_CONTROL";
 
     private static void send(BufferedWriter writer, String data) throws IOException {
         writer.write(data);
@@ -39,6 +41,40 @@ public class Main {
         }
     }
 
+    private static void registrate(BufferedReader reader, BufferedWriter writer, DatabaseHandler db) throws IOException {
+        String login = reader.readLine();
+        String isAdmin = reader.readLine();
+        String password = reader.readLine();
+
+        System.out.println("login: " + login);
+        System.out.println("pass: " + password);
+        System.out.println("isAdmin: " + isAdmin);
+
+        if (!db.isExist(login)) {
+            db.registrate(login, password, isAdmin);
+            send(writer, "SUCCESS");
+        } else send(writer, "ERROR");
+    }
+
+    private static void userControl(BufferedWriter writer, DatabaseHandler db) throws IOException {
+        ResultSet rs = db.getAllUsers();
+        ArrayList<User> users = new ArrayList<>();
+
+        while (true) {
+            try {
+                if (!rs.next()) break;
+                users.add(new User(rs.getString(Const.USERS_LOGIN), rs.getString(Const.USERS_PASSWORD), rs.getString(Const.USERS_ADMIN)));
+
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
+        }
+
+        String numberOfUsers = Integer.toString(users.size());
+        send(writer, numberOfUsers);
+
+    }
+
     public static void main(String[] args) {
 
         DatabaseHandler db = new DatabaseHandler();
@@ -63,6 +99,14 @@ public class Main {
                     switch (modalType) {
                         case SING_IN : {
                             singIn(reader, writer, db);
+                            break;
+                        }
+                        case REGISTRATE: {
+                            registrate(reader, writer, db);
+                            break;
+                        }
+                        case USER_CONTROL: {
+                            userControl(writer ,db);
                             break;
                         }
                         default: {

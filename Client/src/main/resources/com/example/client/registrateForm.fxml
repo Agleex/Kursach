@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.client.RegistrateFormController">
+   <children>
+      <Text layoutX="216.0" layoutY="61.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Зарегистрироваться">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <Text layoutX="117.0" layoutY="154.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Логин (Название компании)" />
+      <Text layoutX="117.0" layoutY="205.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Пароль" />
+      <CheckBox fx:id="isAdminCheckBox" layoutX="117.0" layoutY="239.0" mnemonicParsing="false" text="Администратор" />
+      <Button layoutX="235.0" layoutY="310.0" mnemonicParsing="false" onAction="#registrateBtnAction" text="Зарегистрироваться" />
+      <TextField fx:id="loginField" layoutX="308.0" layoutY="137.0" />
+      <TextField fx:id="passField" layoutX="309.0" layoutY="197.0" />
+   </children>
+</AnchorPane>

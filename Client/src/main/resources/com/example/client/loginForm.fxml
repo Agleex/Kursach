@@ -54,7 +54,7 @@
                   <Font size="14.0" />
                </font>
             </Button>
-            <Label fx:id="toRegistration" prefHeight="15.0" prefWidth="116.0" text="    Еще нет аккаунта?" textAlignment="CENTER">
+            <Label fx:id="toRegistration" onMouseClicked="#toRegistrate" prefHeight="15.0" prefWidth="116.0" text="    Еще нет аккаунта?" textAlignment="CENTER">
                <font>
                   <Font name="System Italic" size="10.0" />
                </font>

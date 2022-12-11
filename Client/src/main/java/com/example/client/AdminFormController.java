@@ -37,8 +37,14 @@ public class AdminFormController {
     }
 
     @FXML
-    void userControlMenuAction(ActionEvent event) {
-
+    void userControlMenuAction(ActionEvent event) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("userControlMenu.fxml"));
+        Parent root1 = (Parent) fxmlLoader.load();
+        Stage stage = new Stage();
+        stage.setScene(new Scene(root1));
+        stage.show();
+        Stage stageRoot = (Stage) toLogin.getScene().getWindow();
+        stageRoot.close();
     }
 
 }
