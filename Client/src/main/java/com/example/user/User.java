@@ -30,4 +30,10 @@ public class User {
     public String getAdmin() {
         return isAdmin;
     }
+
+    public void printUser() {
+        System.out.println("login: " + login);
+        System.out.println("password: " + password);
+        System.out.println("isAdmin: " + isAdmin);
+    }
 }

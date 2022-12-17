@@ -1,5 +1,6 @@
 package com.example.client;
 
+import com.example.user.CurrentUser;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -58,6 +59,8 @@ public class LoginFormController {
 
                 switch (SocketReq.sendSingInRequest("SING_IN", login, pass)) {
                     case "1": {
+                        CurrentUser.setCurrentUser(login, pass, "1");
+
                         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("adminForm.fxml"));
                         Parent root1 = (Parent) fxmlLoader.load();
                         Stage stage = new Stage();
@@ -68,7 +71,16 @@ public class LoginFormController {
                         break;
                     }
                     case "0": {
-                        System.out.println("User");
+                        CurrentUser.setCurrentUser(login, pass, "0");
+                        CurrentUser.SelectedUser.setSelectedUser(login, pass, "0");
+
+                        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("userForm.fxml"));
+                        Parent root1 = (Parent) fxmlLoader.load();
+                        Stage stage = new Stage();
+                        stage.setScene(new Scene(root1));
+                        stage.show();
+                        Stage stageRoot = (Stage) SingInBtn.getScene().getWindow();
+                        stageRoot.close();
                         break;
                     }
                     default: {

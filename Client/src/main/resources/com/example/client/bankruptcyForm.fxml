@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="307.0" prefWidth="491.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.client.BankruptcyFormController">
+   <children>
+      <Text layoutX="14.0" layoutY="31.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Расчет вероятность банкротсва для компании: " wrappingWidth="334.0406494140625">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Text>
+      <Button layoutX="433.0" layoutY="271.0" mnemonicParsing="false" onAction="#exitAction" prefHeight="17.0" prefWidth="43.0" text="Выход">
+         <font>
+            <Font size="10.0" />
+         </font>
+      </Button>
+      <Label fx:id="nameCom" layoutX="99.0" layoutY="37.0" opacity="0.68" text="name">
+         <font>
+            <Font name="System Italic" size="14.0" />
+         </font>
+      </Label>
+      <Button layoutX="56.0" layoutY="96.0" mnemonicParsing="false" onAction="#springaiteAction" prefHeight="38.0" prefWidth="154.0" text="Формула Спрингейта" />
+      <Button layoutX="56.0" layoutY="160.0" mnemonicParsing="false" onAction="#lissAction" prefHeight="38.0" prefWidth="154.0" text="Формула Лиса" />
+      <Button layoutX="234.0" layoutY="96.0" mnemonicParsing="false" onAction="#fellmerAction" prefHeight="38.0" prefWidth="154.0" text="Формула Фулмера" />
+      <Button layoutX="234.0" layoutY="160.0" mnemonicParsing="false" onAction="#tafflerAction" prefHeight="38.0" prefWidth="154.0" text="Формула Таффлера" />
+   </children>
+</AnchorPane>

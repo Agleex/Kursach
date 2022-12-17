@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="478.0" prefWidth="696.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.client.UserFormController">
+   <children>
+      <Text layoutX="14.0" layoutY="64.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Меню пользователя" wrappingWidth="475.83746337890625">
+         <font>
+            <Font name="System Bold" size="46.0" />
+         </font>
+      </Text>
+      <Text layoutX="14.0" layoutY="112.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Название компании: ">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <Button layoutX="495.0" layoutY="83.0" mnemonicParsing="false" onAction="#changeComInfAction" prefHeight="46.0" prefWidth="186.0" text="Изменить данные компании" textAlignment="CENTER" />
+      <Button layoutX="495.0" layoutY="138.0" mnemonicParsing="false" onAction="#addComDesriptionAction" prefHeight="46.0" prefWidth="186.0" text="Добвить описание компании" textAlignment="CENTER" />
+      <Label fx:id="nameCom" layoutX="196.0" layoutY="96.0" opacity="0.7" text="name">
+         <font>
+            <Font name="System Italic" size="14.0" />
+         </font>
+      </Label>
+      <Text layoutX="14.0" layoutY="145.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Описание: ">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <Label fx:id="descriptionCom" alignment="TOP_LEFT" layoutX="14.0" layoutY="156.0" opacity="0.69" prefHeight="290.0" prefWidth="433.0" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ultricies sapien in mauris tincidunt rutrum. Curabitur sodales lorem eget feugiat mattis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed a maximus mauris, non rutrum justo. In gravida urna in diam suscipit posuere. Donec vel massa eget quam fermentum suscipit quis in ex. Sed tortor augue, accumsan id augue et, sagittis viverra lectus. Etiam elementum nisi id ultricies porta. Interdum et malesuada fames ac ante ipsum primis in faucibus. Donec feugiat dolor vel nisl facilisis imperdiet. Nullam dignissim vitae ipsum ut malesuada. Praesent vulputate consequat lacinia. Nulla nec dui egestas, finibus augue et, vulputate ante. Praesent mollis sed leo ut vulputate. Morbi maximus metus non odio efficitur, aliquam placerat nisl tempor." textAlignment="JUSTIFY" wrapText="true">
+         <font>
+            <Font name="System Italic" size="14.0" />
+         </font>
+      </Label>
+      <Button layoutX="495.0" layoutY="192.0" mnemonicParsing="false" onAction="#bankruptcyAction" prefHeight="46.0" prefWidth="186.0" text="Рассчитать вероятность банкротства" textAlignment="CENTER" wrapText="true" />
+      <Button layoutX="622.0" layoutY="430.0" mnemonicParsing="false" onAction="#exitAction" text="Выход" />
+   </children>
+</AnchorPane>

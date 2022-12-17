@@ -1,4 +1,5 @@
 package com.example.client;
+import com.example.user.CurrentUser;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -21,8 +22,16 @@ public class AdminFormController {
     private Button userControlMenu;
 
     @FXML
-    void companyMenuAction(ActionEvent event) {
+    void companyMenuAction(ActionEvent event) throws IOException {
+        CurrentUser.SelectedUser.setSelectedUser(CurrentUser.login, CurrentUser.password, CurrentUser.isAdmin);
 
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("userForm.fxml"));
+        Parent root1 = (Parent) fxmlLoader.load();
+        Stage stage = new Stage();
+        stage.setScene(new Scene(root1));
+        stage.show();
+        Stage stageRoot = (Stage) toLogin.getScene().getWindow();
+        stageRoot.close();
     }
 
     @FXML
